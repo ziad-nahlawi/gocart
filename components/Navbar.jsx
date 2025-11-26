@@ -70,24 +70,28 @@ const Navbar = () => {
                     {/* Mobile User Button  */}
                     <div className="sm:hidden">
                         {user ? (
-                            <div>
-                                <UserButton>
-                                    <UserButton.MenuItems>
-                                        <UserButton.Action labelIcon={<ShoppingCart size={16} />} label="Cart" onClick={() => router.push('/cart')} />
-                                    </UserButton.MenuItems>
-                                </UserButton>
-                                <UserButton>
-                                    <UserButton.MenuItems>
-                                        <UserButton.Action labelIcon={<PackageIcon size={16} />} label="My Orders" onClick={() => router.push('/orders')} />
-                                    </UserButton.MenuItems>
-                                </UserButton>
-                            </div>
+                            <UserButton>
+                                <UserButton.MenuItems>
+                                    <UserButton.Action
+                                        labelIcon={<ShoppingCart size={16} />}
+                                        label="Cart"
+                                        onClick={() => router.push('/cart')}
+                                    />
+                                    <UserButton.Action
+                                        labelIcon={<PackageIcon size={16} />}
+                                        label="My Orders"
+                                        onClick={() => router.push('/orders')}
+                                    />
+                                </UserButton.MenuItems>
+                            </UserButton>
                         ) : (
-                            <button onClick={openSignIn} className="px-7 py-1.5 bg-indigo-500 hover:bg-indigo-600 text-sm transition text-white rounded-full">
+                            <button
+                                onClick={openSignIn}
+                                className="px-7 py-1.5 bg-indigo-500 hover:bg-indigo-600 text-sm transition text-white rounded-full"
+                            >
                                 Login
                             </button>
-                        )
-                        }
+                        )}
                     </div>
                 </div>
             </div>
