@@ -35,11 +35,11 @@ export async function POST(request) {
             }
         }
 
-        const hasPlusPlan = has({ plan: 'plus' })
+        const isPlusMember = has({ plan: 'plus' })
 
         // Check if coupon is applicable for members
         if (couponCode && coupon.forMember) {
-            if (!hasPlusPlan) {
+            if (!isPlusMember) {
                 return NextResponse.json({ error: "Coupon Valid for members only" }, { status: 400 })
             }
         }
