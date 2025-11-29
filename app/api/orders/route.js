@@ -116,7 +116,8 @@ export async function GET(request) {
         const { userId } = getAuth(request)
         const orders = await prisma.order.findMany({
             where: {
-                userId, OR: [
+                userId,
+                OR: [
                     { paymentMethod: paymentMethod.COD },
                     { AND: [{ paymentMethod: paymentMethod.STRIPE }, { isPaid: true }] }
                 ]
